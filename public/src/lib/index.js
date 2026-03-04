@@ -59,7 +59,7 @@ import Pusher from 'pusher-js';
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	// authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`,
-	authEndpoint: `https://werktijden-server.adaptable.app/pusher/auth`
+	authEndpoint: `https://smartboard-a1d0.onrender.com//pusher/auth`
 	// auth: {
 	// 	headers: {
 	// 		'Access-Control-Allow-Origin': 'http://localhost:3000/pusher/auth'
@@ -73,7 +73,7 @@ export const sizes = [
 	{ reference: 's', name: 'Small', x: 210, y: 210 },
 	{ reference: 'm', name: 'Medium', x: 420, y: 210 },
 	{ reference: 'l', name: 'Large', x: 420, y: 420 },
-	{ reference: 'xl', name: 'Extra large', x: 600, y: 420 },
+	{ reference: 'xl', name: 'Extra large', x: 600, y: 420 }
 ];
 
 // AVAILABLE WIDGETS
@@ -81,22 +81,37 @@ export const sizes = [
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', size: sizes[0], preview: PreviewWeer1, path: 'weer-1' },
-	{ title: 'Weer met urenvoorspelling', size: sizes[1], preview: PreviewWeerUren, path: 'weer-uren' },
+	{
+		title: 'Weer met urenvoorspelling',
+		size: sizes[1],
+		preview: PreviewWeerUren,
+		path: 'weer-uren'
+	},
 	// { title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
 	{ title: 'Weer met alles', size: sizes[2], preview: PreviewWeerAlles, path: 'weer-uren-week' },
-	{ title: 'Kan ik een korte broek aan?', size: sizes[1], preview: PreviewKanikeenkortebroekaan, path: 'kanikeenkortebroekaan' },
+	{
+		title: 'Kan ik een korte broek aan?',
+		size: sizes[1],
+		preview: PreviewKanikeenkortebroekaan,
+		path: 'kanikeenkortebroekaan'
+	},
 	{ title: 'Incoming calls', size: sizes[3], preview: IncomingCalls, path: 'incomingcalls' },
 	{ title: 'Proefperiodes', size: sizes[2], preview: PreviewProefperiodes, path: 'proefperiode' },
 	{ title: 'Verlengingen', size: sizes[2], preview: PreviewVerlengingen, path: 'verlengingen' },
 	{ title: 'Tickets', size: sizes[2], preview: PreviewTickets, path: 'tickets' },
-	{ title: 'Ingeklokte medewerkers', size: sizes[2], preview: PreviewIngeklokteMedewerkers, path: 'punches' },
+	{
+		title: 'Ingeklokte medewerkers',
+		size: sizes[2],
+		preview: PreviewIngeklokteMedewerkers,
+		path: 'punches'
+	},
 	{ title: 'Analoge klok', size: sizes[0], preview: Analogeklok, path: 'analogeklok-2' },
 	{ title: 'Digitale klok', size: sizes[0], preview: Digitaleklok, path: 'digitaleklok-1' },
 	// { title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', size: sizes[0], preview: Kalender2, path: 'kalender-2' },
 	{ title: 'De Dam Live', size: sizes[3], path: 'de-dam-live' },
 	{ title: 'Wereldsteden Live', size: sizes[3], path: 'wereldsteden-live' },
-	{ title: 'Gettysburg Vogelvoederhuisje Live', size: sizes[3], path: 'natuur-live' },
+	{ title: 'Gettysburg Vogelvoederhuisje Live', size: sizes[3], path: 'natuur-live' }
 	// { title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
 	// { title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' },
 ];
@@ -108,11 +123,29 @@ export const availableTemplates = [
 	{
 		title: 'Standaard',
 		preview: PreviewStandaard,
-		widgets: ['weer-uren-week', 'de-dam-live', 'incomingcalls', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'tickets', 'proefperiode', 'verlengingen', 'punches']
+		widgets: [
+			'weer-uren-week',
+			'de-dam-live',
+			'incomingcalls',
+			'analogeklok-2',
+			'kalender-2',
+			'kanikeenkortebroekaan',
+			'tickets',
+			'proefperiode',
+			'verlengingen',
+			'punches'
+		]
 	},
 	{
 		title: 'Eenvoudig',
 		preview: PreviewEenvoudig,
-		widgets: ['weer-uren-week', 'de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan']
+		widgets: [
+			'weer-uren-week',
+			'de-dam-live',
+			'wereldsteden-live',
+			'analogeklok-2',
+			'kalender-2',
+			'kanikeenkortebroekaan'
+		]
 	}
 ];

@@ -1,5 +1,4 @@
 export const load = async () => {
-
 	const data = await fetch('https://feeds.nos.nl/nosnieuwsalgemeen')
 		.then((response) => {
 			return response.text();
@@ -29,5 +28,5 @@ function generateKoppelcode() {
 }
 
 function generateQRcodeSrc(koppelcode) {
-	return `https://werktijden-smartboard.vercel.app/widgets/${koppelcode}`;
+	return `https://smartboard-theta.vercel.app/widgets/${koppelcode}`;
 }

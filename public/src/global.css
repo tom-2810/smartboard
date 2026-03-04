@@ -1,0 +1,277 @@
+:root {
+    --c-primary-werktijden: #00AE4A;
+    /* --c-primary-werktijden: #009f66; */
+    --c-text-primary: #202020;
+    --c-text-secondary: #727272;
+    --c-border-default: #e8e8e8;
+    --c-background: #f8f8f8;
+
+    --border-default: 2px solid var(--c-border-default);
+    --border-focus: 2px solid var(--c-primary-werktijden);
+
+    --border-radius-default: 6px;
+    --border-radius-widget: 14px;
+
+    --box-shadow-default: 0px 0px 8px 0px rgba(0, 0, 0, 0.045);
+    --box-shadow-extra: 0px 1px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        'Open Sans',
+        'Helvetica Neue',
+        sans-serif;
+    font-weight: 500;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F8F8F8;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 2rem;
+    padding: 1.4rem;
+    line-height: 100%;
+}
+
+h1 img {
+    height: 1.8rem;
+    margin-right: 0.6rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 110%;
+}
+
+h3 {
+    font-size: 1.3rem;
+    line-height: 110%;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+#history {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+#history li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--c-border-default);
+    border-bottom: 1px solid var(--c-border-default);
+    padding: 0 1.4rem;
+    width: 100%;
+    height: 5.2rem;
+}
+
+.connected {
+    display: block !important;
+    animation: connected .5s forwards;
+}
+
+.fadeout {
+    animation: fadeout .5s forwards;
+}
+
+.hide {
+    display: none !important;
+}
+
+.active li,
+.active img {
+    filter: contrast(1) !important;
+}
+
+#templatesBtn.active,
+#templatesList.active {
+    display: flex !important;
+}
+
+*:has(#widget-filter input[data-filter="active-widgets"]:checked)+ul .widget-setting:has(input:not(:checked)) {
+    animation: disable .4s;
+    display: none;
+}
+
+#no-active {
+    display: block;
+}
+
+#widget-settings:has(.widget-setting input:checked) #no-active {
+    display: none;
+}
+
+*:has(#widget-filter input[data-filter=""]:checked) #no-active {
+    display: none;
+}
+
+#templatesList.open {
+    height: 100dvh !important;
+}
+
+#templatesBtn.open svg {
+    transform: rotateX(180deg);
+}
+
+.widget {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.incoming-call {
+    animation: incoming-call 1s steps(1) infinite;
+}
+
+.connected-call {
+    background-color: #009F66;
+    color: white;
+}
+
+.disconnected-call {
+    background-color: white;
+    color: var(--c-text-primary);
+}
+
+.incoming-call .time span {
+    display: none !important;
+}
+
+.connected-call .duration,
+.disconnected-call .duration {
+    display: block !important;
+}
+
+.incoming-call .phone {
+    display: block !important;
+    transform-origin: center;
+    animation: incoming-call-phone 1s steps(1) infinite, shake .3s infinite;
+}
+
+@keyframes incoming-call {
+    from {
+        background-color: #009F66;
+        color: white;
+    }
+
+    50% {
+        background-color: white;
+        color: var(--c-text-primary);
+    }
+}
+
+@keyframes incoming-call-phone {
+    from {
+        fill: white;
+    }
+
+    50% {
+        fill: #009F66;
+    }
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(6deg);
+    }
+}
+
+@keyframes disable {
+    from {
+        display: flex;
+        opacity: 1;
+    }
+
+    50% {
+        display: flex;
+        opacity: 1;
+    }
+
+    90% {
+        display: flex;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes connected {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: .1;
+    }
+}
+
+@keyframes dots {
+    from {
+        content: '.';
+    }
+
+    20% {
+        content: '.';
+    }
+
+    40% {
+        content: '..';
+    }
+
+    60% {
+        content: '...';
+    }
+
+    to {
+        content: '...';
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

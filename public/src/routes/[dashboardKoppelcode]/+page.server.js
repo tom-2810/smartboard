@@ -25,5 +25,5 @@ export const load = async ({ params }) => {
 };
 
 function generateQRcodeSrc(koppelcode) {
-	return `https://werktijden-smartboard.vercel.app/widgets/${koppelcode}`;
+	return `https://smartboard-theta.vercel.app/widgets/${koppelcode}`;
 }

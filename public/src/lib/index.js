@@ -111,7 +111,7 @@ export const availableWidgets = [
 	// { title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', size: sizes[0], preview: Kalender2, path: 'kalender-2' },
 	{ title: 'De Dam Live', size: sizes[3], path: 'de-dam-live' },
-	{ title: 'Amsterdam Drone Live', size: sizes[4], path: 'amsterdam-drone-live' },
+	{ title: 'Amsterdam Drone Live', size: sizes[3], path: 'amsterdam-drone-live' },
 	{ title: 'Wereldsteden Live', size: sizes[3], path: 'wereldsteden-live' },
 	{ title: 'Gettysburg Vogelvoederhuisje Live', size: sizes[3], path: 'natuur-live' }
 	// { title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
